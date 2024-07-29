@@ -1,0 +1,34 @@
+% Facts
+father(chris, james).
+father(john, james).
+father(allan, chris).
+father(ted, john).
+father(mike,john).
+father(lisha, allan).
+father(nicholas, allan).
+father(maddie, ted).
+father(martin, fabien).
+father(jesse, fabien ).
+father(alex, zack).
+
+
+mother(chris, mercy).
+mother(john, mercy).
+mother(allan, tatiana).
+mother(ted, alisha).
+mother(mike, alisha).
+mother(maddie, miriam).
+mother(alex, maddie).
+mother(grace, mia).
+mother(nicholas, mia).
+mother(martin, grace).
+mother(jesse, grace).
+
+
+% Rules
+sibling(X, Y) :- 
+    father(X, Z), father(Y, Z), X \= Y.
+sibling(X, Y) :- 
+    mother(X, Z), mother(Y, Z), X \= Y.
+spouse(X,Y):-
+    father(Z,X), mother(Z,Y).
